@@ -1,13 +1,39 @@
 //TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
 // click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
-void main() {
-    //TIP Press <shortcut actionId="ShowIntentionActions"/> with your caret at the highlighted text
-    // to see how IntelliJ IDEA suggests fixing it.
-    IO.println(String.format("Hello and welcome!"));
 
-    for (int i = 1; i <= 5; i++) {
-        //TIP Press <shortcut actionId="Debug"/> to start debugging your code. We have set one <icon src="AllIcons.Debugger.Db_set_breakpoint"/> breakpoint
-        // for you, but you can always add more by pressing <shortcut actionId="ToggleLineBreakpoint"/>.
-        IO.println("i = " + i);
+import java.util.Scanner;
+import java.util.ArrayList;
+void main() {
+    ArrayList<String> sucursal = new ArrayList<>();
+    ArrayList<Integer> importe = new ArrayList<>();
+
+    Scanner sc = new Scanner(System.in);
+
+    while (true){
+        System.out.println("Escibre -1 en importe actual para cancelar.");
+        System.out.println("Ingresa el nombre de la sucursal ");
+        String sucursalActual = sc.nextLine();
+        System.out.println("Ingresa el importe de la sucursal ");
+        Integer importeActual = sc.nextInt();
+
+        if(importeActual == -1){
+            break;
+        }
+
+        sucursal.add(sucursalActual);
+        importe.add(importeActual);
     }
+
+    int mayorActual = importe.get(0);
+    for(int i = 0; i<importe.size(); i++){
+        if(importe.get(i) > mayorActual){
+            mayorActual = importe.get(i);
+        }
+    }
+
+
+
+
+
+
 }
