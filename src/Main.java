@@ -5,15 +5,15 @@ import java.util.Scanner;
 import java.util.ArrayList;
 void main() {
     ArrayList<String> sucursal = new ArrayList<>();
-    ArrayList<Integer> importe = new ArrayList<>();
+    ArrayList<Double> importe = new ArrayList<>();
 
     Scanner sc = new Scanner(System.in);
 
     System.out.println("Escibre -1 en importe actual para cancelar.");
     while (true){
-        System.out.println("Ingresa el nombre de la sucursal ");
+        System.out.print("Ingresa el nombre de la sucursal > ");
         String sucursalActual = sc.nextLine();
-        System.out.println("Ingresa el importe de la sucursal ");
+        System.out.print("Ingresa el importe de la sucursal > ");
         int importeActual = sc.nextInt();
         sc.nextLine();
 
@@ -22,11 +22,11 @@ void main() {
         }
 
         sucursal.add(sucursalActual);
-        importe.add(importeActual);
+        importe.add((double) importeActual);
     }
 
     if(!importe.isEmpty()){
-        int mayorActual = importe.get(0);
+        Double mayorActual = importe.getFirst();
         int indiceMayor = 0;
 
         for(int i = 0; i<importe.size(); i++) {
