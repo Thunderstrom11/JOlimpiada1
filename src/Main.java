@@ -15,6 +15,7 @@ void main() {
         String sucursalActual = sc.nextLine();
         System.out.println("Ingresa el importe de la sucursal ");
         int importeActual = sc.nextInt();
+        sc.nextLine();
 
         if(importeActual == -1){
             break;
@@ -24,21 +25,17 @@ void main() {
         importe.add(importeActual);
     }
 
-    int mayorActual = importe.get(0);
-    int indiceMayor = 0;
-    for(int i = 0; i<importe.size(); i++){
-        if(importe.get(i) > mayorActual){
-            mayorActual = importe.get(i);
-            indiceMayor = i;
+    if(!importe.isEmpty()){
+        int mayorActual = importe.get(0);
+        int indiceMayor = 0;
+
+        for(int i = 0; i<importe.size(); i++) {
+            if (importe.get(i) > mayorActual) {
+                mayorActual = importe.get(i);
+                indiceMayor = i;
+            }
         }
+
+        System.out.println(sucursal.get(indiceMayor) +  " " + importe.get(indiceMayor));
     }
-    System.out.println(sucursal.get(indiceMayor));
-    System.out.println(importe.get(indiceMayor));
-
-
-
-
-
-
-
 }
