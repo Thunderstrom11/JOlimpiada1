@@ -9,12 +9,12 @@ void main() {
 
     Scanner sc = new Scanner(System.in);
 
+    System.out.println("Escibre -1 en importe actual para cancelar.");
     while (true){
-        System.out.println("Escibre -1 en importe actual para cancelar.");
         System.out.println("Ingresa el nombre de la sucursal ");
         String sucursalActual = sc.nextLine();
         System.out.println("Ingresa el importe de la sucursal ");
-        Integer importeActual = sc.nextInt();
+        int importeActual = sc.nextInt();
 
         if(importeActual == -1){
             break;
@@ -25,11 +25,16 @@ void main() {
     }
 
     int mayorActual = importe.get(0);
+    int indiceMayor = 0;
     for(int i = 0; i<importe.size(); i++){
         if(importe.get(i) > mayorActual){
             mayorActual = importe.get(i);
+            indiceMayor = i;
         }
     }
+    System.out.println(sucursal.get(indiceMayor));
+    System.out.println(importe.get(indiceMayor));
+
 
 
 
